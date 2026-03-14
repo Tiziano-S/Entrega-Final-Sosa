@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duitornio</title>
-    {% load static%}
-    <link rel="stylesheet" href="{% static 'Main/styles.css' %}">
-</head>
-<body>
-    <h1>Test1</h1>
-</body>
-</html>
+{% extends 'Main/base.html' %}
+
+{% block titulo %}
+Inicio
+{% endblock titulo %}
+
+{% block contenido_titulo %}
+Duitornio
+{% endblock contenido_titulo %}
+
+{% block contenido %}
+<div class="text-center">
+    <a class="btn btn-primary" href="{% url 'blog:lista_publicacion' %}">Ingresar</a>
+</div>
+{% endblock contenido %}

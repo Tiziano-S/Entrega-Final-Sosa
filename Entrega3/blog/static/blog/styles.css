@@ -1,0 +1,20 @@
+body{
+    background-color:#1f7a8c;
+}
+
+.hero{
+    background:#1ea7d8;
+    text-align:center;
+    padding:60px;
+}
+
+.hero h1{
+    font-size:70px;
+    font-weight:bold;
+}
+
+.sidebar-box{
+    background:#ddd;
+    padding:20px;
+    width:200px;
+}
