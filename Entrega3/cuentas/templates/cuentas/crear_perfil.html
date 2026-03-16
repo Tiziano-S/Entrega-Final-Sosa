@@ -1,0 +1,18 @@
+{% extends 'Main/base_simple.html' %}
+
+{% block titulo %}
+    Crear Perfil
+{% endblock titulo %}
+
+{% block contenido_titulo %}
+    Crear Perfil
+{% endblock contenido_titulo %}
+
+{% block contenido %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit">Guardar perfil</button>
+    </form>
+{% endblock contenido %}

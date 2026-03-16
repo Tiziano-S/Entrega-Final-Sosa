@@ -1,0 +1,26 @@
+{% extends 'Main/base_simple.html' %}
+
+{% block titulo %}
+    {{request.user.username}}
+{% endblock titulo %}
+
+{% block contenido_titulo %}
+    Informacion de {{request.user.username}}
+{% endblock contenido_titulo %}
+
+{% block contenido %}
+    <p>Publicaciones hechas:
+        {% if posts %}
+            <ul>
+                {% for post in posts %}
+                    <li>
+                        <strong>{{ post.titulo }}</strong><br>
+                        {{ post.contenido|truncatewords:20 }}
+                    </li>
+                {% empty %}
+                    <p>Este autor no ha publicado nada todavía.</p>
+                {% endfor %}
+            </ul>
+            {% endif %}
+    </p>
+{% endblock contenido %}

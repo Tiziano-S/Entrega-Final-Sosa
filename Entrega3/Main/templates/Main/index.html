@@ -8,8 +8,30 @@ Inicio
 Duitornio
 {% endblock contenido_titulo %}
 
+{% block descripcion %}
+<h4>Sobre Duitornio</h4>
+<p>
+Duitornio es un blog de posts donde podes
+ver,crear y publicar posts. Podes explorar articulos,
+explorar diferentes secciones de nuestra web y crear perfiles.
+</p>
+{% endblock descripcion %}
+
 {% block contenido %}
 <div class="text-center">
-    <a class="btn btn-primary" href="{% url 'blog:lista_publicacion' %}">Ingresar</a>
+    <a class="btn btn-primary" href="{% url 'blog:lista_publicacion' %}">Ingresar al blog</a>
 </div>
 {% endblock contenido %}
+
+{% block urls %}
+<h4>Accesos Directos</h4>
+<ul>
+    <li><a href="/">Inicio</a> | Pagina principal</li>
+    <li><a href="{% url 'blog:lista_publicacion' %}">Blog</a> | Ver posts</li>
+    <li><a href="{% url 'blog:crear_publicacion' %}">Crear post</a> | Publicar</li>
+    <li><a href="/admin/">Admin</a> | Administracion</li>
+    <li><a href="{% url 'cuentas:pagina_autor' %}">Perfil</a> | Ver perfil</li>
+    <li><a href="{% url 'cuentas:registro' %}">Crear perfil</a> | Registrarse</li>
+    <li><a href="{% url 'login' %}">Perfil</a> | Iniciar Sesion</li>
+</ul>
+{% endblock urls %}
