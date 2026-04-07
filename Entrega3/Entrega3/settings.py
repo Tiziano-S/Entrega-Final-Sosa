@@ -121,3 +121,7 @@ STATIC_URL = 'static/'
 
 LOGIN_URL = "/accounts/login/"
 LOGIN_REDIRECT_URL = "/perfil/"
+
+STATIC_URL = 'static/'
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"

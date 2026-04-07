@@ -9,6 +9,21 @@
 {% endblock contenido_titulo %}
 
 {% block contenido %}
+
+    {% if user.is_authenticated %}
+            <li>
+                {% if user.avatar.imagen %}
+                    <img src="{{ user.avatar.imagen.url }}" width="150" height="150">
+                {% endif %}
+            </li>
+    {% endif %}
+
+    <p>Nombre: {{ user.first_name }}</p>
+
+    <p>Apellido: {{ user.last_name }}</p>
+
+    <p>Email: {{ user.email }}</p>
+
     <p>Publicaciones hechas:
         {% if posts %}
             <ul>

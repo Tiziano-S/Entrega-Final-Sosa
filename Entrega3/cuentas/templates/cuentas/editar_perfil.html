@@ -1,11 +1,11 @@
 {% extends 'Main/base_simple.html' %}
 
 {% block titulo %}
-    Crear Perfil
+    Editar Perfil
 {% endblock titulo %}
 
 {% block contenido_titulo %}
-    Crear Perfil
+    Edita tu Perfil
 {% endblock contenido_titulo %}
 
 {% block contenido %}
@@ -13,6 +13,6 @@
         {% csrf_token %}
         {{ form.as_p }}
         {{ avatar_form.as_table }}
-        <button type="submit">Guardar perfil</button>
+        <button type="submit">Guardar cambios</button>
     </form>
 {% endblock contenido %}
