@@ -7,7 +7,7 @@ app_name = "cuentas"
 
 urlpatterns = [
     path("", views.perfil, name="pagina_autor"),
-    path("crear/", views.crear_perfil, name="crear_perfil"),
+    path("crear_perfil/", views.crear_perfil, name="crear_perfil"),
     path("registro/", views.registro, name="registro"),
     path("editar_perfil", views.editar_perfil, name="editar_perfil"),
 ]

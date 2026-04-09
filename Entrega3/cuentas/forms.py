@@ -11,6 +11,10 @@ class AuthorProfileForm(forms.ModelForm):
         fields = ["info", "region"]
 
 class RegistroUsuarioForm(UserCreationForm):
+    email = forms.EmailField(required=True, label="Email")
+    first_name = forms.CharField(required=True, label="Nombre")
+    last_name = forms.CharField(required=True, label="Apellido")
+    bio = forms.CharField(required=False, label="Bio/Tu info")
     class Meta:
         model = User
         fields = ["username", "first_name", "last_name" ,"email" , "password1", "password2"]

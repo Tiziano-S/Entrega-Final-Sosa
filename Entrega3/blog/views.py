@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Publicacion
 from django.conf import settings
 from .forms import PostForm
+from django.views.generic import ListView, DetailView
 print(settings.DATABASES)
 
 def lista_publicacion(request):
@@ -18,7 +19,7 @@ def crear_publicacion(request):
         if form.is_valid():
             post = form.save(commit=False)
             if request.user.is_authenticated:
-                post.author = request.user
+                post.autor = request.user
                 post.save()
                 return redirect('blog:lista_publicacion')
             else:
@@ -26,3 +27,23 @@ def crear_publicacion(request):
     else:
         form = PostForm()
     return render(request,"blog/crear_publicacion.html", context={"form":form})
+
+def form_valid(self, form):
+    form.instance.autor = self.request.user
+    return super().form_valid(form)
+
+class VistaListaPublicaciones(ListView):
+    model = Publicacion
+    template_name = "blog/lista_publicaciones.html"
+    context_object_name = "publicaciones"
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        busqueda = self.request.GET.get("busqueda", None)
+        if busqueda:
+            queryset = queryset.filter(titulo__icontains=busqueda)
+        return queryset
+    
+class VistaPublicacionDetalle(DetailView):
+    model = Publicacion
+    template_name = "blog/publicacion_detalle.html"

@@ -3,5 +3,6 @@ from . import views
 app_name = "blog"
 urlpatterns = [
     path("lista/publicaciones", views.lista_publicacion, name= "lista_publicacion"),
-    path("crear/publicacion", views.crear_publicacion, name="crear_publicacion")
+    path("crear/publicacion", views.crear_publicacion, name="crear_publicacion"),
+    path("publicacion/detalle/<int:pk>", views.VistaPublicacionDetalle.as_view(), name="publicacion_detalle"),
 ]

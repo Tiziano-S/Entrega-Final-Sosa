@@ -25,17 +25,15 @@
     <p>Email: {{ user.email }}</p>
 
     <p>Publicaciones hechas:
-        {% if posts %}
-            <ul>
-                {% for post in posts %}
-                    <li>
-                        <strong>{{ post.titulo }}</strong><br>
-                        {{ post.contenido|truncatewords:20 }}
-                    </li>
-                {% empty %}
-                    <p>Este autor no ha publicado nada todavía.</p>
-                {% endfor %}
-            </ul>
-            {% endif %}
+        <ul>
+            {% for publicacion in posts %}
+                <li>
+                    <strong>{{ publicacion.titulo }}</strong><br>
+                    {{ posts.contenido|truncatewords:20 }}
+                </li>
+            {% empty %}
+                <p>Este autor no ha publicado nada todavía.</p>
+            {% endfor %}
+        </ul>
     </p>
 {% endblock contenido %}
