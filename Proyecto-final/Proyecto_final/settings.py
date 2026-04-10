@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-5g7ih&(1ni0v%4o!n+y)03fgvf@(#h(8y31wsfkgm)2^!21%lg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.onrender.com']
 
 
 # Application definition
@@ -127,3 +127,7 @@ STATIC_URL = 'static/'
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://entrega-final-sosa.onrender.com"
+]
