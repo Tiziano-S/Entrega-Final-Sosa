@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'entrega3.wsgi.application'
+WSGI_APPLICATION = 'Proyecto-final.wsgi.application'
 
 
 # Database
