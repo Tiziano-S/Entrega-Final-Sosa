@@ -1,0 +1,1 @@
+gunicorn Proyecto_final.wsgi:application
