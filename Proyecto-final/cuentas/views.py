@@ -48,6 +48,7 @@ def registro(request):
 
     if request.method == "POST":
         form = RegistroUsuarioForm(request.POST)
+        avatar_form = AvatarForm(request.POST, request.FILES)
 
         if form.is_valid():
             user = form.save()
