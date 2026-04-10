@@ -64,6 +64,7 @@ def registro(request):
         "avatar_form": avatar_form
     })
 
+@login_required
 def editar_perfil(request):
     if request.method == "POST":
         form = EditUserForm(request.POST, instance=request.user)
