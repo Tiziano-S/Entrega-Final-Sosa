@@ -56,9 +56,11 @@ def registro(request):
 
     else:
         form = RegistroUsuarioForm()
+        avatar_form = AvatarForm()
 
     return render(request, "cuentas/registro.html", {
-        "form": form
+        "form": form,
+        "avatar_form": avatar_form
     })
 
 def editar_perfil(request):
